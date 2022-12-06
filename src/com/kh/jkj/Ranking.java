@@ -5,14 +5,18 @@ package com.kh.jkj;
 public class Ranking {
 	private String name;
 	private int firstScore;
+	private int secondScore;
+	private int thirdScore;
 	
 	public Ranking() {}
 	
 	public Ranking(String name) {
 		this.name = name;
 	}
-	public Ranking(int firstScore) {
+	public Ranking(int firstScore, int secondScore, int thirdScore) {
 		this.firstScore = firstScore;
+		this.secondScore = secondScore;
+		this.thirdScore = thirdScore;
 	}
 	
 	public Ranking(String name, int firstScore) {
@@ -27,6 +31,12 @@ public class Ranking {
 	public int getFirstScore() {
 		return this.firstScore;
 	}
+	public int getSecondScore() {
+		return this.secondScore;
+	}
+	public int getThirdScore() {
+		return this.thirdScore;
+	}
 
 	// setter ¸Þ¼Òµå
 	public void setName(String name) {
@@ -34,6 +44,12 @@ public class Ranking {
 	}
 	public void setFirstScore(int firstScore) {
 		this.firstScore = firstScore;
+	}
+	public void setSecondScore(int secondScore) {
+		this.secondScore = secondScore;
+	}
+	public void setThirdScore(int thirdScore) {
+		this.thirdScore = thirdScore;
 	}
 
 }

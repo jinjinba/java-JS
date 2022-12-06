@@ -26,17 +26,24 @@ public class RankingFunction {
 			System.out.println("=====" + (i+1) + " 번째 미용사 정보 입력 =====");
 			System.out.println("미용사 이름 입력 : ");
 			String name = sc.next();
-			System.out.println((i+1) + "미용사의 점수 입력 : ");
+			System.out.println(name + "미용사의 1차 점수 입력 : ");
 			int firstScore = sc.nextInt();
+			System.out.println(name + "미용사의 2차 점수 입력 : ");
+			int secondScore = sc.nextInt();
+			System.out.println(name + "미용사의 3치 점수 입력 : ");
+			int thirdScore = sc.nextInt();
 			rankings[i] = new Ranking();
 			rankings[i].setName(name);
 			rankings[i].setFirstScore(firstScore);
+			rankings[i].setSecondScore(secondScore);
+			rankings[i].setThirdScore(thirdScore);
 		}	
 	}	
 	public void printScore() {
 		for(int i = 0; i < rankings.length; i++) {
-			System.out.println("=====" + (i+1) + "번째 미용사 점수 출력 =====");
-			System.out.println(rankings[i].getName() + "미용사의 점수는 :" + rankings[i].getFirstScore());
+			System.out.println("=====" + rankings[i].getName() + "미용사 점수 출력 =====");
+			System.out.println(rankings[i].getName() + "미용사의 점수");
+			System.out.println("1차 점수 : " + rankings[i].getFirstScore() + " 2차 점수 : " + rankings[i].getSecondScore() + " 3차 점수 : " + rankings[i].getThirdScore());
 		}
 	}
 	public void checkPass() {
@@ -44,7 +51,7 @@ public class RankingFunction {
 		System.out.println("===== 미용 대회 순위 =====");
 			 for(int i = 0 ; i < 3 ; i++){
 				   for(int j = 0 ; j < 3 ; j++){
-					   if(rankings[i].getFirstScore() < rankings[j].getFirstScore()) {
+					   if(rankings[i].getFirstScore() + rankings[i].getSecondScore() + rankings[i].getThirdScore() < rankings[j].getFirstScore() + rankings[j].getSecondScore() + rankings[j].getThirdScore()) {
 						   rank[i] = rank[i] + 1;
 					   }
 				   }
